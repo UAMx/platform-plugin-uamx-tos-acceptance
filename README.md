@@ -10,8 +10,7 @@ You should use this extension as an extra requirement for OpenEdx. In tutor, you
 To install this repo: 
 ```
 # Download and setup as a private requirement
-cd $(tutor config printroot)/env/build/openedx/requirements
-git clone git@github.com:UAMx/uamx-tos-acceptance.git
+git clone git@github.com:UAMx/uamx-tos-acceptance.git "$(tutor config printroot)/env/build/openedx/requirements/uamx-tos-acceptance"
 echo "-e ./uamx-tos-acceptance" >> "$(tutor config printroot)/env/build/openedx/requirements/private.txt"
 
 # Rebuild the image to deploy changes
