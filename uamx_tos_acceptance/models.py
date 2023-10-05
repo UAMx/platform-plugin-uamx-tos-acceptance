@@ -9,11 +9,11 @@ from django.db import models
 
 class TermsOfService(TimeStampedModel):
     """
-    TODO: replace with a brief description of the model.
+    Model to keep track of the terms of service acceptance by the users
 
-    TODO: Add either a negative or a positive PII annotation to the end of this docstring.  For more
-    information, see OEP-30:
-    https://open-edx-proposals.readthedocs.io/en/latest/oep-0030-arch-pii-markup-and-auditing.html
+    Variables:
+        user (ForeignKey): The user that will accept (or not) the TOS
+        accepted (Boolean): The state of the TOS accepntance by the user. True if accepted, False if not.
     """
 
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, related_name='terms_of_service')
