@@ -33,5 +33,20 @@ class UamxTosAcceptanceConfig(AppConfig):
                 # Optional; Defaults to None.
                 PluginURLs.APP_NAME: 'uamx_tos_acceptance'
             }
+        },
+
+        PluginSettings.CONFIG: {
+            # Configure Plugin to perform a filter pipeline execution after login
+            # so user is redirected to accept terms of service if not already accepted, before doing anything else
+            # Based on https://github.com/eduNEXT/openedx-filters-samples/blob/master/openedx_filters_samples/samples/pipeline.py#L292
+
+            'OPEN_EDX_FILTERS_CONFIG': {
+                'org.openedx.learning.student.login.requested.v1': {
+                    'fail_silently': False,
+                    'pipeline': [
+                        'uamx_tos_acceptance.pipeline.StopLogin'
+                    ]
+                }
+            }
         }
     }    
