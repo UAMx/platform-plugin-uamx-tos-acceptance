@@ -6,7 +6,7 @@ See https://edx.readthedocs.io/projects/edx-django-utils/en/latest/plugins/how_t
 
 from django.apps import AppConfig
 from edx_django_utils.plugins.constants import (
-    PluginURLs, PluginSettings, PluginContexts
+    PluginURLs, PluginSettings
 )
 
 class UamxTosAcceptanceConfig(AppConfig):
