@@ -22,10 +22,13 @@ class UAMxTermsOfServiceMiddleware:
 
         response = self.get_response(request)
 
+        # Check if user is uthenticated
         if request.user.is_authenticated and not request.path == "/uamx_tos_acceptance":
 
+            # Check the state of TOS acceptance
             accepted = TermsOfService.objects.filter(user=request.user, accepted=True).exists()
 
+            # Redirect ONLY if user has not accepted the TOS
             if not accepted:
                 return redirect('/uamx_tos_acceptance')
             

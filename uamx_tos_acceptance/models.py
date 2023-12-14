@@ -13,7 +13,7 @@ class TermsOfService(TimeStampedModel):
 
     Variables:
         user (ForeignKey): The user that will accept (or not) the TOS
-        accepted (Boolean): The state of the TOS accepntance by the user. True if accepted, False if not.
+        accepted (Boolean): The state of the TOS acceptance by the user. True if accepted, False if not.
     """
 
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, related_name='terms_of_service')
