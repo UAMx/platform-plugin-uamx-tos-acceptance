@@ -13,10 +13,12 @@ def index(request):
     # Create or retrive TermsOfService instance for the logged user
     instance, created = TermsOfService.objects.get_or_create(user=request.user)
 
-    # If TOS are already accepted, redirect to dashboard
-    # TODO: redirect to wherever the user was going to
+    # retrieve previous url, passed as "next" param
+    redirect_url = request.GET.get('next', '/dashboard')
+
+    # If TOS are already accepted, redirect to the previous url
     if instance.accepted:
-        return redirect('/dashboard')
+        return redirect(redirect_url)
 
     # Create an AcceptanceForm with the provided instance
     form = AcceptanceForm(instance=instance)
@@ -29,7 +31,7 @@ def index(request):
         # Validate form data and if everything OK redirect to dashboard
         if form.is_valid():
                 tos = form.save()
-                return redirect('/dashboard')
+                return redirect(redirect_url)
 
     # We should hide the user field as it is not relevant for the user
     # and he/she should not modify it

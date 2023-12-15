@@ -28,11 +28,11 @@ class UAMxTermsOfServiceMiddleware:
             # Check the state of TOS acceptance
             accepted = TermsOfService.objects.filter(user=request.user, accepted=True).exists()
             
-            # permitted_urls = any(request.path.startswith(x) for x in ('/uamx_tos_acceptance', '/authn', '/api', '/tos', '/admin', '/account'))
-            should_block_url = any(request.path.startswith(x) for x in ('/learning', '/dashboard', '/courses', '/u/{}'.format(request.user.username), '/account/settings', '/course_modes'))
+            should_block_url = any(request.path.startswith(x) for x in ('/learning', '/dashboard', '/courses', '/u/{}'.format(request.user.username), '/account/settings'))
 
             # Redirect ONLY if user has not accepted the TOS
             if not accepted and should_block_url:
-                return redirect('/uamx_tos_acceptance')
+                # Note that the previous URL is passed as "next" in GET params
+                return redirect('/uamx_tos_acceptance?next={}'.format(request.path))
             
         return response
