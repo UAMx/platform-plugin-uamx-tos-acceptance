@@ -23,13 +23,16 @@ class UAMxTermsOfServiceMiddleware:
         response = self.get_response(request)
 
         # Check if user is uthenticated
-        if request.user.is_authenticated and not request.path == "/uamx_tos_acceptance":
+        if request.user.is_authenticated:
 
             # Check the state of TOS acceptance
             accepted = TermsOfService.objects.filter(user=request.user, accepted=True).exists()
+            
+            # permitted_urls = any(request.path.startswith(x) for x in ('/uamx_tos_acceptance', '/authn', '/api', '/tos', '/admin', '/account'))
+            should_block_url = any(request.path.startswith(x) for x in ('/learning', '/dashboard', '/courses', '/u/{}'.format(request.user.username), '/account/settings', '/course_modes'))
 
             # Redirect ONLY if user has not accepted the TOS
-            if not accepted:
+            if not accepted and should_block_url:
                 return redirect('/uamx_tos_acceptance')
             
         return response
