@@ -32,7 +32,6 @@ class UAMxTermsOfServiceMiddleware:
 
             # Redirect ONLY if user has not accepted the TOS
             if not accepted and should_block_url:
-                # Note that the previous URL is passed as "next" in GET params
-                return redirect('/uamx_tos_acceptance?next={}'.format(request.path))
+                return redirect('/uamx_tos_acceptance')
             
         return response
