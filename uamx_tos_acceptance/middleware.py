@@ -28,7 +28,7 @@ class UAMxTermsOfServiceMiddleware:
             # Check the state of TOS acceptance
             accepted = TermsOfService.objects.filter(user=request.user, accepted=True).exists()
             
-            should_block_url = any(request.path.startswith(x) for x in ('/learning', '/dashboard', '/courses', '/u/{}'.format(request.user.username), '/account/settings'))
+            should_block_url = any(request.path.startswith(x) for x in ('/learning', '/dashboard', '/courses', '/u/{}'.format(request.user.username), '/account/settings', '/course_mode'))
 
             # Redirect ONLY if user has not accepted the TOS
             if not accepted and should_block_url:
