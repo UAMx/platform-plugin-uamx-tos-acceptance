@@ -33,6 +33,7 @@ class UAMxTermsOfServiceMiddleware:
 
             # Check the state of TOS acceptance
             accepted = TermsOfService.objects.filter(user=request.user, accepted=True).exists()
+            lms_root_url = configuration_helpers.get_value('LMS_ROOT_URL', settings.LMS_ROOT_URL)
 
             # Redirect ONLY if user has not accepted the TOS
             if not accepted:
@@ -40,10 +41,12 @@ class UAMxTermsOfServiceMiddleware:
                 # catch api login_session response and modify redirect_url
                 # to redirect user to TOS
                 if request.path == '/api/user/v2/account/login_session/':
-                    lms_root_url = configuration_helpers.get_value('LMS_ROOT_URL', settings.LMS_ROOT_URL)
-                    parsed = json.loads(response.content.decode('utf-8'))
-                    parsed['redirect_url']='{}/uamx_tos_acceptance'.format(lms_root_url)
-                    return JsonResponse(parsed, safe=False)
+                    payload = response.content.decode('utf-8')
+
+                    if isinstance(payload, dict):
+                        parsed = json.loads(payload)
+                        parsed['redirect_url']='{}/uamx_tos_acceptance'.format(lms_root_url)
+                        return JsonResponse(parsed, safe=False)
 
                 # While in TOS the menu is still visible, this prevents
                 # user from navigate to new page
