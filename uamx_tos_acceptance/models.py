@@ -17,7 +17,12 @@ class TermsOfService(TimeStampedModel):
     """
 
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, related_name='terms_of_service')
-    accepted = models.BooleanField('Acepto los términos y condiciones', default=False)
+    accepted_tos = models.BooleanField('Acepto los términos y condiciones', default=False)
+    accepted_privacy = models.BooleanField('Acepto la política de privacidad', default=False)
+
+    @property
+    def accepted(self):
+        return self.accepted_tos and self.accepted_privacy
 
     def __str__(self):
         return 'TermsOfService id'.format(self.id)
