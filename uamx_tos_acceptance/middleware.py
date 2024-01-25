@@ -29,7 +29,7 @@ class UAMxTermsOfServiceMiddleware:
 
         response = self.get_response(request)
 
-        if request.startswith('/admin'):
+        if request.path.startswith('/admin'):
             # Disable uamx TOS check for administration site
             pass
 
