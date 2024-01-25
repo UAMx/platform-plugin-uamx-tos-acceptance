@@ -13,7 +13,8 @@ class TermsOfService(TimeStampedModel):
 
     Variables:
         user (ForeignKey): The user that will accept (or not) the TOS
-        accepted (Boolean): The state of the TOS acceptance by the user. True if accepted, False if not.
+        accepted_tos (Boolean): The state of the TOS acceptance by the user. True if accepted, False if not.
+        accepted_privacy (Boolean): The state of the privacy policy acceptance by the user. True if accepted, False if not.
     """
 
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, related_name='terms_of_service')
@@ -21,7 +22,7 @@ class TermsOfService(TimeStampedModel):
     accepted_privacy = models.BooleanField('Acepto la política de privacidad', default=False)
 
     @property
-    def accepted(self):
+    def is_accepted(self):
         return self.accepted_tos and self.accepted_privacy
 
     def __str__(self):

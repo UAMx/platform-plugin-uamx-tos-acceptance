@@ -17,7 +17,7 @@ def index(request):
     redirect_url = request.GET.get('next', '/dashboard')
 
     # If TOS are already accepted, redirect to the previous url
-    if instance.accepted:
+    if instance.is_accepted:
         return redirect(redirect_url)
 
     # Create an AcceptanceForm with the provided instance

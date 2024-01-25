@@ -29,19 +29,15 @@ class UAMxTermsOfServiceMiddleware:
 
         response = self.get_response(request)
 
-        if request.path.startswith('/admin'):
-            # Disable uamx TOS check for administration site
-            pass
-
-        elif request.user.is_authenticated:
+        if request.user.is_authenticated:
             
             # if user is authenticated,
             # check the state of TOS acceptance 
-            accepted = TermsOfService.objects.filter(user=request.user, accepted=True).exists()
+            is_accepted = TermsOfService.objects.filter(user=request.user, accepted_tos=True, accepted_privacy=True, ).exists()
             lms_root_url = configuration_helpers.get_value('LMS_ROOT_URL', settings.LMS_ROOT_URL)
 
             # Redirect ONLY if user has not accepted the TOS
-            if not accepted:
+            if not is_accepted:
                 
                 # catch api login_session response and modify redirect_url
                 # to redirect user to TOS
