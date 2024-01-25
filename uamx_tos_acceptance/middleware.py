@@ -13,10 +13,10 @@ class UAMxTermsOfServiceMiddleware:
     """
     The purppose of this middleware is to check if a user has accepted the 
     Terms Of Service of the application and if not, redirect her 
-    to the terms of service acceptance form
+    to the terms of service acceptance form.
     
     So we create this middleware to listen to any request 
-    and redirect the user if needed
+    and redirect the user if needed.
     """
 
     def __init__(self, get_response):
@@ -29,10 +29,14 @@ class UAMxTermsOfServiceMiddleware:
 
         response = self.get_response(request)
 
-        # Check if user is authenticated
-        if request.user.is_authenticated:
+        if request.startswith('/admin'):
+            # Disable uamx TOS check for administration site
+            pass
 
-            # Check the state of TOS acceptance
+        elif request.user.is_authenticated:
+            
+            # if user is authenticated,
+            # check the state of TOS acceptance 
             accepted = TermsOfService.objects.filter(user=request.user, accepted=True).exists()
             lms_root_url = configuration_helpers.get_value('LMS_ROOT_URL', settings.LMS_ROOT_URL)
 
