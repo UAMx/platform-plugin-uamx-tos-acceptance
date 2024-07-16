@@ -9,7 +9,8 @@ This app integrates into the LMS and into the LMS admin:
 - in LMS, for an authenticated user, it shows an alert if the user have not accepted the terms and conditions yet and creates a page in the path `https://DOMAIN_NAME/uamx_tos_acceptance` showing the acceptance form.
 - in LMS admin, at `https://DOMAIN_NAME/admin/uamx_tos_acceptance/termsofservice/`, shows a list of `TermsOfService` entries with one entry for each user, and the ability to switch the acceptance of the TOS. It also shows the date of creation / modification of the model.
 
-![image](https://github.com/UAMx/uamx-tos-acceptance/assets/56433614/e2009d1c-221c-477f-bb98-200b73a7153a)
+![image](https://github.com/UAMx/uamx-tos-acceptance/assets/56433614/6ffc9e54-e70d-47a8-b9c1-5ab9ac767302)
+
 
 ## Installation and setup
 
