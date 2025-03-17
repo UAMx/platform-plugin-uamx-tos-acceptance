@@ -33,7 +33,7 @@ One Time Setup
 .. code-block::
 
   # Clone the repository
-  git clone git@github.com:UAMx/uamx-tos-acceptance.git
+  git clone git@github.com:UAMx/platform-plugin-uamx-tos-acceptance.git
   cd uamx-tos-acceptance
 
   # Set up a virtualenv with the same name as the repo and activate it
@@ -113,7 +113,7 @@ For anything non-trivial, the best path is to open an issue in this
 repository with as many details about the issue you are facing as you
 can provide.
 
-https://github.com/UAMx/uamx-tos-acceptance/issues
+https://github.com/UAMx/platform-plugin-uamx-tos-acceptance/issues
 
 For more information about these options, see the `Getting Help <https://openedx.org/getting-help>`__ page.
 
@@ -166,12 +166,12 @@ Please do not report security issues in public. Please email security@openedx.or
     :target: https://pypi.python.org/pypi/uamx-tos-acceptance/
     :alt: PyPI
 
-.. |ci-badge| image:: https://github.com/UAMx/uamx-tos-acceptance/workflows/Python%20CI/badge.svg?branch=main
-    :target: https://github.com/UAMx/uamx-tos-acceptance/actions
+.. |ci-badge| image:: https://github.com/UAMx/platform-plugin-uamx-tos-acceptance/workflows/Python%20CI/badge.svg?branch=main
+    :target: https://github.com/UAMx/platform-plugin-uamx-tos-acceptance/actions
     :alt: CI
 
-.. |codecov-badge| image:: https://codecov.io/github/UAMx/uamx-tos-acceptance/coverage.svg?branch=main
-    :target: https://codecov.io/github/UAMx/uamx-tos-acceptance?branch=main
+.. |codecov-badge| image:: https://codecov.io/github/UAMx/platform-plugin-uamx-tos-acceptance/coverage.svg?branch=main
+    :target: https://codecov.io/github/UAMx/platform-plugin-uamx-tos-acceptance?branch=main
     :alt: Codecov
 
 .. |doc-badge| image:: https://readthedocs.org/projects/uamx-tos-acceptance/badge/?version=latest
@@ -182,8 +182,8 @@ Please do not report security issues in public. Please email security@openedx.or
     :target: https://pypi.python.org/pypi/uamx-tos-acceptance/
     :alt: Supported Python versions
 
-.. |license-badge| image:: https://img.shields.io/github/license/UAMx/uamx-tos-acceptance.svg
-    :target: https://github.com/UAMx/uamx-tos-acceptance/blob/main/LICENSE.txt
+.. |license-badge| image:: https://img.shields.io/github/license/UAMx/platform-plugin-uamx-tos-acceptance.svg
+    :target: https://github.com/UAMx/platform-plugin-uamx-tos-acceptance/blob/main/LICENSE.txt
     :alt: License
 
 .. TODO: Choose one of the statuses below and remove the other status-badge lines.

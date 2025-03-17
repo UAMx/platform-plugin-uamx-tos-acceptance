@@ -135,7 +135,7 @@ setup(
     long_description=README + '\n\n' + CHANGELOG,
     author='UAMx',
     author_email='yago.bernabe@uam.es',
-    url='https://github.com/UAMx/uamx-tos-acceptance',
+    url='https://github.com/UAMx/platform-plugin-uamx-tos-acceptance',
     packages=find_packages(
         include=['platform_plugin_uamx_tos_acceptance', 'platform_plugin_uamx_tos_acceptance.*'],
         exclude=["*tests"],
@@ -159,9 +159,8 @@ setup(
     ],
     entry_points={
         "lms.djangoapp": [
-            "platform_plugin_uamx_tos_acceptance = platform_plugin_uamx_tos_acceptance.apps:UamxTosAcceptanceConfig",
-        ],
-        "cms.djangoapp": [
-        ],
+            "platform_plugin_uamx_tos_acceptance = platform_plugin_uamx_tos_acceptance"
+            ".apps:UamxTosAcceptanceConfig"
+        ]
     }
 )

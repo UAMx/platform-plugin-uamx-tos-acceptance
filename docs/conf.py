@@ -186,7 +186,7 @@ html_theme = 'sphinx_book_theme'
 # documentation.
 #
 html_theme_options = {
-    "repository_url": "https://github.com/UAMx/uamx-tos-acceptance",
+    "repository_url": "https://github.com/UAMx/platform-plugin-uamx-tos-acceptance",
     "repository_branch": 'main',
     "path_to_docs": "docs/",
     "home_page_in_toc": True,

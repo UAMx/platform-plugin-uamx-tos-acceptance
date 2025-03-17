@@ -9,7 +9,7 @@ This app integrates into the LMS and into the LMS admin:
 - in LMS, for an authenticated user, it shows an alert if the user have not accepted the terms and conditions yet and creates a page in the path `https://DOMAIN_NAME/platform_plugin_uamx_tos_acceptance` showing the acceptance form.
 - in LMS admin, at `https://DOMAIN_NAME/admin/platform_plugin_uamx_tos_acceptance/termsofservice/`, shows a list of `TermsOfService` entries with one entry for each user, and the ability to switch the acceptance of the TOS. It also shows the date of creation / modification of the model.
 
-![image](https://github.com/UAMx/uamx-tos-acceptance/assets/56433614/6ffc9e54-e70d-47a8-b9c1-5ab9ac767302)
+![image](https://github.com/UAMx/platform-plugin-uamx-tos-acceptance/assets/56433614/6ffc9e54-e70d-47a8-b9c1-5ab9ac767302)
 
 
 ## Installation and setup
@@ -18,7 +18,7 @@ You should use this extension as an extra requirement for OpenEdx. In tutor, you
 
 ```
 # Download and setup uamx-tos-acceptance as a private requirement
-git clone git@github.com:UAMx/uamx-tos-acceptance.git "$(tutor config printroot)/env/build/openedx/requirements/uamx-tos-acceptance"
+git clone git@github.com:UAMx/platform-plugin-uamx-tos-acceptance.git "$(tutor config printroot)/env/build/openedx/requirements/uamx-tos-acceptance"
 echo "-e ./uamx-tos-acceptance" >> "$(tutor config printroot)/env/build/openedx/requirements/private.txt"
 
 # Rebuild the image to deploy changes
