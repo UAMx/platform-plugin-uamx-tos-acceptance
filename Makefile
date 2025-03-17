@@ -85,17 +85,16 @@ selfcheck: ## check that the Makefile is well-formed
 
 extract_translations: ## extract strings to be translated, outputting .mo files
 	rm -rf docs/_build
-	cd platform_plugin_uamx_tos_acceptance && ../manage.py makemessages -l en -v1 -d django
-	cd platform_plugin_uamx_tos_acceptance && ../manage.py makemessages -l en -v1 -d djangojs
+	cd platform_plugin_uamx_tos_acceptance && i18n_tool extract --no-segment
 
 compile_translations: ## compile translation files, outputting .po files for each supported language
-	cd platform_plugin_uamx_tos_acceptance && ../manage.py compilemessages
+	cd platform_plugin_uamx_tos_acceptance && i18n_tool generate
 
 detect_changed_source_translations:
 	cd platform_plugin_uamx_tos_acceptance && i18n_tool changed
 
-pull_translations: ## pull translations from Transifex
-	tx pull -af -t --mode reviewed
+pull_translations: ## Pull translations from Transifex
+	tx pull -t -a -f --mode reviewed
 
 push_translations: ## push source translation files (.po) from Transifex
 	tx push -s
