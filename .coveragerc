@@ -1,7 +1,7 @@
 [run]
 branch = True
 data_file = .coverage
-source=uamx_tos_acceptance
+source=platform_plugin_uamx_tos_acceptance
 omit =
     test_settings.py
     */migrations/*

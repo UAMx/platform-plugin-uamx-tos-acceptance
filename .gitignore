@@ -53,8 +53,8 @@ output/*/index.html
 # Sphinx
 docs/_build
 docs/modules.rst
-docs/uamx_tos_acceptance.rst
-docs/uamx_tos_acceptance.*.rst
+docs/platform_plugin_uamx_tos_acceptance.rst
+docs/platform_plugin_uamx_tos_acceptance.*.rst
 
 # Private requirements
 requirements/private.in

@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('uamx_tos_acceptance', '0002_alter_termsofservice_id'),
+        ('platform_plugin_uamx_tos_acceptance', '0002_alter_termsofservice_id'),
     ]
 
     operations = [

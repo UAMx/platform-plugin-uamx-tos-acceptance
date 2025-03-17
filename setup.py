@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Package metadata for uamx_tos_acceptance.
+Package metadata for platform_plugin_uamx_tos_acceptance.
 """
 import os
 import re
@@ -117,7 +117,7 @@ def is_requirement(line):
     return line and line.strip() and not line.startswith(("-r", "#", "-e", "git+", "-c"))
 
 
-VERSION = get_version('uamx_tos_acceptance', '__init__.py')
+VERSION = get_version('platform_plugin_uamx_tos_acceptance', '__init__.py')
 
 if sys.argv[-1] == 'tag':
     print("Tagging the version on github:")
@@ -137,7 +137,7 @@ setup(
     author_email='yago.bernabe@uam.es',
     url='https://github.com/UAMx/uamx-tos-acceptance',
     packages=find_packages(
-        include=['uamx_tos_acceptance', 'uamx_tos_acceptance.*'],
+        include=['platform_plugin_uamx_tos_acceptance', 'platform_plugin_uamx_tos_acceptance.*'],
         exclude=["*tests"],
     ),
 
@@ -159,7 +159,7 @@ setup(
     ],
     entry_points={
         "lms.djangoapp": [
-            "uamx_tos_acceptance = uamx_tos_acceptance.apps:UamxTosAcceptanceConfig",
+            "platform_plugin_uamx_tos_acceptance = platform_plugin_uamx_tos_acceptance.apps:UamxTosAcceptanceConfig",
         ],
         "cms.djangoapp": [
         ],

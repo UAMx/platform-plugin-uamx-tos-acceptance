@@ -1,5 +1,5 @@
 """
-Database models for uamx_tos_acceptance.
+Database models for platform_plugin_uamx_tos_acceptance.
 """
 # from django.db import models
 from model_utils.models import TimeStampedModel

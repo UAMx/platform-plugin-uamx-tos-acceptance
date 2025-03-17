@@ -37,4 +37,4 @@ def index(request):
     # and he/she should not modify it
     form.fields['user'].widget = HiddenInput()
     
-    return render_to_response('uamx_tos_acceptance/index.html', {'form': form})
+    return render_to_response('platform_plugin_uamx_tos_acceptance/index.html', {'form': form})

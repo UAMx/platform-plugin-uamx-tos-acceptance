@@ -46,14 +46,14 @@ class UAMxTermsOfServiceMiddleware:
 
                     if isinstance(payload, str):
                         parsed = json.loads(payload)
-                        parsed['redirect_url']='{}/uamx_tos_acceptance'.format(lms_root_url)
+                        parsed['redirect_url']='{}/platform_plugin_uamx_tos_acceptance'.format(lms_root_url)
                         response = JsonResponse(parsed, safe=False)
 
                 # While in TOS the menu is still visible, this prevents
                 # user from navigate to new page
                 should_redirect = any(request.path.startswith(x) for x in ('/dashboard', '/courses', '/u/{}'.format(request.user.username), '/account/settings', '/course_mode'))
                 if should_redirect:
-                    response = redirect('/uamx_tos_acceptance')
+                    response = redirect('/platform_plugin_uamx_tos_acceptance')
                 
                 # As we cannot redirect users under an MFE, we just log them out 
                 # and try to redirect them to the home page
