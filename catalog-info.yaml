@@ -4,7 +4,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: ""
 metadata:
-  name: 'uamx-tos-acceptance'
+  name: 'platform_plugin_uamx_tos_acceptance'
   description: "Enable users to accept the terms of service"
   annotations:
     # (Optional) Annotation keys and values can be whatever you want.

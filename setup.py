@@ -129,7 +129,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.rst'), encoding="u
 CHANGELOG = open(os.path.join(os.path.dirname(__file__), 'CHANGELOG.rst'), encoding="utf8").read()
 
 setup(
-    name='uamx-tos-acceptance',
+    name='platform_plugin_uamx_tos_acceptance',
     version=VERSION,
     description="""Enable users to accept the terms of service""",
     long_description=README + '\n\n' + CHANGELOG,

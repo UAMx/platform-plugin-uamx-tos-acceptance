@@ -1,6 +1,6 @@
 # pylint: disable=invalid-name
 """
-uamx-tos-acceptance documentation build configuration file.
+platform_plugin_uamx_tos_acceptance documentation build configuration file.
 
 This file is execfile()d with the current directory set to its
 containing dir.
@@ -91,17 +91,17 @@ source_suffix = '.rst'
 top_level_doc = 'index'
 
 # General information about the project.
-project = 'uamx-tos-acceptance'
+project = 'platform_plugin_uamx_tos_acceptance'
 copyright = f'{datetime.now().year}, Axim Collaborative, Inc.'  # pylint: disable=redefined-builtin
 author = 'Axim Collaborative, Inc.'
-project_title = 'uamx-tos-acceptance'
+project_title = 'platform_plugin_uamx_tos_acceptance'
 documentation_title = f"{project_title}"
 
 # Set display_github to False if you don't want "edit on Github" button
 html_context = {
     "display_github": True,  # Integrate GitHub
     "github_user": "edx",  # Username
-    "github_repo": 'uamx-tos-acceptance',  # Repo name
+    "github_repo": 'platform_plugin_uamx_tos_acceptance',  # Repo name
     "github_version": "main",  # Version
     "conf_py_path": "/docs/",  # Path in the checkout to the docs root
 }
@@ -223,7 +223,7 @@ html_theme_options = {
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-# html_title = 'uamx-tos-acceptance v0.1.0'
+# html_title = 'platform_plugin_uamx_tos_acceptance v0.1.0'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
