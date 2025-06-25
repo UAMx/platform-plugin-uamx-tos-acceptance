@@ -159,8 +159,7 @@ setup(
     ],
     entry_points={
         "lms.djangoapp": [
-            "platform_plugin_uamx_tos_acceptance = platform_plugin_uamx_tos_acceptance"
-            ".apps:UamxTosAcceptanceConfig"
+            "platform_plugin_uamx_tos_acceptance = uamx_tos_acceptance.apps:UamxTosAcceptanceConfig"
         ]
     }
 )
