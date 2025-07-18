@@ -1,6 +1,6 @@
 # pylint: disable=invalid-name
 """
-uamx-tos-acceptance documentation build configuration file.
+platform-plugin-uamx-tos-acceptance documentation build configuration file.
 
 This file is execfile()d with the current directory set to its
 containing dir.
@@ -39,7 +39,7 @@ def get_version(*file_paths):
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(REPO_ROOT)
 
-VERSION = get_version('../uamx_tos_acceptance', '__init__.py')
+VERSION = get_version('../platform_plugin_uamx_tos_acceptance', '__init__.py')
 # Configure Django for autodoc usage
 os.environ['DJANGO_SETTINGS_MODULE'] = 'test_settings'
 django_setup()
@@ -91,17 +91,17 @@ source_suffix = '.rst'
 top_level_doc = 'index'
 
 # General information about the project.
-project = 'uamx-tos-acceptance'
+project = 'platform-plugin-uamx-tos-acceptance'
 copyright = f'{datetime.now().year}, Axim Collaborative, Inc.'  # pylint: disable=redefined-builtin
 author = 'Axim Collaborative, Inc.'
-project_title = 'uamx-tos-acceptance'
+project_title = 'platform-plugin-uamx-tos-acceptance'
 documentation_title = f"{project_title}"
 
 # Set display_github to False if you don't want "edit on Github" button
 html_context = {
     "display_github": True,  # Integrate GitHub
     "github_user": "edx",  # Username
-    "github_repo": 'uamx-tos-acceptance',  # Repo name
+    "github_repo": 'platform-plugin-uamx-tos-acceptance',  # Repo name
     "github_version": "main",  # Version
     "conf_py_path": "/docs/",  # Path in the checkout to the docs root
 }
@@ -186,7 +186,7 @@ html_theme = 'sphinx_book_theme'
 # documentation.
 #
 html_theme_options = {
-    "repository_url": "https://github.com/UAMx/uamx-tos-acceptance",
+    "repository_url": "https://github.com/UAMx/platform-plugin-uamx-tos-acceptance",
     "repository_branch": 'main',
     "path_to_docs": "docs/",
     "home_page_in_toc": True,
@@ -223,7 +223,7 @@ html_theme_options = {
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-# html_title = 'uamx-tos-acceptance v0.1.0'
+# html_title = 'platform-plugin-uamx-tos-acceptance v0.1.0'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
@@ -409,7 +409,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (top_level_doc, project_title, documentation_title,
-     author, project_title, 'Enable users to accept the terms of service',
+     author, project_title, 'PLugin for showing TOS form after registration',
      'Miscellaneous'),
 ]
 
@@ -517,8 +517,8 @@ epub_exclude_files = ['search.html']
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3.8', None),
-    'django': ('https://docs.djangoproject.com/en/3.2/', 'https://docs.djangoproject.com/en/3.2/_objects/'),
+    'python': ('https://docs.python.org/3.12', None),
+    'django': ('https://docs.djangoproject.com/en/4.2/', 'https://docs.djangoproject.com/en/3.2/_objects/'),
     'model_utils': ('https://django-model-utils.readthedocs.io/en/latest/', None),
 }
 
@@ -537,8 +537,8 @@ def on_init(app):  # pylint: disable=unused-argument
         # If we are, assemble the path manually
         bin_path = os.path.abspath(os.path.join(sys.prefix, 'bin'))
         apidoc_path = os.path.join(bin_path, apidoc_path)
-    check_call([apidoc_path, '-o', docs_path, os.path.join(root_path, 'uamx_tos_acceptance'),
-                os.path.join(root_path, 'uamx_tos_acceptance/migrations')])
+    check_call([apidoc_path, '-o', docs_path, os.path.join(root_path, 'platform_plugin_uamx_tos_acceptance'),
+                os.path.join(root_path, 'platform_plugin_uamx_tos_acceptance/migrations')])
 
 
 def setup(app):
