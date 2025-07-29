@@ -1,5 +1,9 @@
 # Plugin settings.py overrides
 
+INSTALLED_APPS = [
+    "platform_plugin_uamx_tos_acceptance",
+]
+
 # lint-amnesty, pylint: disable=missing-function-docstring, missing-module-docstring
 def plugin_settings(settings):
 

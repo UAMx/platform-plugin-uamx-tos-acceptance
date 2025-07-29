@@ -140,10 +140,17 @@ setup(
         include=['platform_plugin_uamx_tos_acceptance', 'platform_plugin_uamx_tos_acceptance.*'],
         exclude=["*tests"],
     ),
-
+    entry_points={
+        "lms.djangoapp": [
+            "platform_plugin_uamx_tos_acceptance = platform_plugin_uamx_tos_acceptance.apps:UamxTosAcceptanceConfig"
+        ],
+        "cms.djangoapp": [
+            "platform_plugin_uamx_tos_acceptance = platform_plugin_uamx_tos_acceptance.apps:UamxTosAcceptanceConfig"
+        ],
+    },
     include_package_data=True,
     install_requires=load_requirements('requirements/base.in'),
-    python_requires=">=3.8",
+    python_requires=">=3.11",
     license="AGPL 3.0",
     zip_safe=False,
     keywords='Python edx',
@@ -156,6 +163,6 @@ setup(
         'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.11',
     ],
 )
