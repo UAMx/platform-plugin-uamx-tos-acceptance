@@ -1,18 +1,13 @@
 #!/usr/bin/env python
 """
-Tests for the `uamx-tos-acceptance` models module.
+Tests for the `platform-plugin-uamx-tos-acceptance` models module.
 """
 
 import pytest
 
 
-class TestTermsOfService:
+@pytest.mark.skip(reason="Placeholder to allow pytest to succeed before real tests are in place.")
+def test_placeholder():
     """
-    Tests of the TermsOfService model.
+    TODO: Delete this test once there are real tests.
     """
-
-    @pytest.mark.skip(reason="Placeholder to allow pytest to succeed before real tests are in place.")
-    def test_placeholder(self):
-        """
-        TODO: Delete this test once there are real tests.
-        """

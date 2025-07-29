@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Package metadata for uamx_tos_acceptance.
+Package metadata for platform_plugin_uamx_tos_acceptance.
 """
 import os
 import re
@@ -117,7 +117,7 @@ def is_requirement(line):
     return line and line.strip() and not line.startswith(("-r", "#", "-e", "git+", "-c"))
 
 
-VERSION = get_version('uamx_tos_acceptance', '__init__.py')
+VERSION = get_version('platform_plugin_uamx_tos_acceptance', '__init__.py')
 
 if sys.argv[-1] == 'tag':
     print("Tagging the version on github:")
@@ -129,39 +129,40 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.rst'), encoding="u
 CHANGELOG = open(os.path.join(os.path.dirname(__file__), 'CHANGELOG.rst'), encoding="utf8").read()
 
 setup(
-    name='uamx-tos-acceptance',
+    name='platform-plugin-uamx-tos-acceptance',
     version=VERSION,
-    description="""Enable users to accept the terms of service""",
+    description="""PLugin for showing TOS form after registration""",
     long_description=README + '\n\n' + CHANGELOG,
-    author='UAMx',
+    author='Yago Bernabé García',
     author_email='yago.bernabe@uam.es',
-    url='https://github.com/UAMx/uamx-tos-acceptance',
+    url='https://github.com/UAMx/platform-plugin-uamx-tos-acceptance',
     packages=find_packages(
-        include=['uamx_tos_acceptance', 'uamx_tos_acceptance.*'],
+        include=['platform_plugin_uamx_tos_acceptance', 'platform_plugin_uamx_tos_acceptance.*'],
         exclude=["*tests"],
     ),
-
+    entry_points={
+        "lms.djangoapp": [
+            "platform_plugin_uamx_tos_acceptance = platform_plugin_uamx_tos_acceptance.apps:UamxTosAcceptanceConfig"
+        ],
+        "cms.djangoapp": [
+            "platform_plugin_uamx_tos_acceptance = platform_plugin_uamx_tos_acceptance.apps:UamxTosAcceptanceConfig"
+        ],
+    },
     include_package_data=True,
     install_requires=load_requirements('requirements/base.in'),
-    python_requires=">=3.8",
+    python_requires=">=3.11",
     license="AGPL 3.0",
     zip_safe=False,
     keywords='Python edx',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Framework :: Django',
-        'Framework :: Django :: 3.2',
+        'Framework :: Django :: 4.2',
+        'Framework :: Django :: 5.2',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.11',
     ],
-    entry_points={
-        "lms.djangoapp": [
-            "uamx_tos_acceptance = uamx_tos_acceptance.apps:UamxTosAcceptanceConfig",
-        ],
-        "cms.djangoapp": [
-        ],
-    }
 )

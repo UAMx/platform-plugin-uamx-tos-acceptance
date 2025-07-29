@@ -4,4 +4,4 @@
 def plugin_settings(settings):
 
     # Add UAMxTermsOfServiceMiddleware middleware to the list of Django middlewares
-    settings.MIDDLEWARE += ['uamx_tos_acceptance.middleware.UAMxTermsOfServiceMiddleware']
+    settings.MIDDLEWARE += ['platform_plugin_uamx_tos_acceptance.middleware.UAMxTermsOfServiceMiddleware']

@@ -1,5 +1,5 @@
 """
-uamx_tos_acceptance Django application initialization.
+platform_plugin_uamx_tos_acceptance Django application initialization.
 
 See https://edx.readthedocs.io/projects/edx-django-utils/en/latest/plugins/how_tos/how_to_create_a_plugin_app.html
 """
@@ -16,7 +16,7 @@ class UamxTosAcceptanceConfig(AppConfig):
     https://edx.readthedocs.io/projects/edx-django-utils/en/latest/plugins/how_tos/how_to_create_a_plugin_app.html
     """
 
-    name = 'uamx_tos_acceptance'
+    name = 'platform_plugin_uamx_tos_acceptance'
 
     # Class attribute that configures and enables this app as a Plugin App.
     plugin_app = {
@@ -31,11 +31,11 @@ class UamxTosAcceptanceConfig(AppConfig):
             'lms.djangoapp': {
 
                 # The namespace to provide to django's urls.include.
-                PluginURLs.NAMESPACE: 'uamx_tos_acceptance',
+                PluginURLs.NAMESPACE: 'platform_plugin_uamx_tos_acceptance',
 
                 # The application namespace to provide to django's urls.include.
                 # Optional; Defaults to None.
-                PluginURLs.APP_NAME: 'uamx_tos_acceptance'
+                PluginURLs.APP_NAME: 'platform_plugin_uamx_tos_acceptance'
             }
         },
 

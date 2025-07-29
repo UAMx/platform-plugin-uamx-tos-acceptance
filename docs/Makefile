@@ -96,9 +96,9 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/uamx-tos-acceptance.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/platform-plugin-uamx-tos-acceptance.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/uamx-tos-acceptance.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/platform-plugin-uamx-tos-acceptance.qhc"
 
 .PHONY: applehelp
 applehelp:
@@ -115,8 +115,8 @@ devhelp:
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/uamx-tos-acceptance"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/uamx-tos-acceptance"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/platform-plugin-uamx-tos-acceptance"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/platform-plugin-uamx-tos-acceptance"
 	@echo "# devhelp"
 
 .PHONY: epub

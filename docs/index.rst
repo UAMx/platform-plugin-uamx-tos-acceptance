@@ -1,12 +1,12 @@
-.. uamx-tos-acceptance documentation top level file, created by
-   sphinx-quickstart on Mon Sep 25 15:31:59 2023.
+.. platform-plugin-uamx-tos-acceptance documentation top level file, created by
+   sphinx-quickstart on Fri Jun 27 09:43:56 2025.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-uamx-tos-acceptance
-===================
+platform-plugin-uamx-tos-acceptance
+===================================
 
-Enable users to accept the terms of service
+PLugin for showing TOS form after registration
 
 Contents:
 

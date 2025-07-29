@@ -2,4 +2,6 @@
 -c constraints.txt
 
 Django             # Web application framework
-django-model-utils        # Provides TimeStampedModel abstract base class
+
+
+openedx-atlas

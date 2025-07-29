@@ -32,14 +32,14 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.sessions',
-    'uamx_tos_acceptance',
+    'platform_plugin_uamx_tos_acceptance',
 )
 
 LOCALE_PATHS = [
-    root('uamx_tos_acceptance', 'conf', 'locale'),
+    root('platform_plugin_uamx_tos_acceptance', 'conf', 'locale'),
 ]
 
-ROOT_URLCONF = 'uamx_tos_acceptance.urls'
+ROOT_URLCONF = 'platform_plugin_uamx_tos_acceptance.urls'
 
 SECRET_KEY = 'insecure-secret-key'
 
